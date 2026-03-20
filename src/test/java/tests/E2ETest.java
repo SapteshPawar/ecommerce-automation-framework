@@ -18,19 +18,23 @@ public class E2ETest extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.login(username, password);
 
-        // NEGATIVE CASE
+        // ❌ Negative Case
         if (username.equals("invalid_user")) {
-            Assert.assertTrue(driver.getCurrentUrl().contains("saucedemo"));
+            String error = login.getErrorMessage();
+            Assert.assertTrue(error.contains("do not match"), "Error message not displayed");
             return;
         }
 
-        // POSITIVE FLOW
+        // ✅ Positive Case
         ProductsPage product = new ProductsPage(driver);
         product.applyFilter();
-        product.addProductToCart();
+
+        String productName = "Sauce Labs Backpack";
+        product.addProductToCart(productName);
         product.goToCart();
 
         CartPage cart = new CartPage(driver);
-        Assert.assertTrue(false, "Forcing failure to test screenshot");
+        Assert.assertTrue(cart.isProductDisplayed(productName),
+                "Product not found in cart");
     }
 }

@@ -6,13 +6,12 @@ public class CartPage {
 
     WebDriver driver;
 
-    By cartItem = By.className("inventory_item_name");
-
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public boolean isProductDisplayed() {
-        return driver.findElement(cartItem).isDisplayed();
+    // ✅ Better validation
+    public boolean isProductDisplayed(String productName) {
+        return driver.getPageSource().contains(productName);
     }
 }

@@ -11,7 +11,6 @@ public class ProductsPage {
     WebDriverWait wait;
 
     By filterDropdown = By.className("product_sort_container");
-    By addToCartBtn = By.id("add-to-cart-sauce-labs-backpack");
     By cartIcon = By.className("shopping_cart_link");
 
     public ProductsPage(WebDriver driver) {
@@ -26,8 +25,10 @@ public class ProductsPage {
         select.selectByVisibleText("Price (low to high)");
     }
 
-    public void addProductToCart() {
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
+    // ✅ Dynamic product selection
+    public void addProductToCart(String productName) {
+        By product = By.xpath("//div[text()='" + productName + "']/ancestor::div[@class='inventory_item']//button");
+        wait.until(ExpectedConditions.elementToBeClickable(product)).click();
     }
 
     public void goToCart() {

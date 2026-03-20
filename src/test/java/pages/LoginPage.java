@@ -13,6 +13,7 @@ public class LoginPage {
     By username = By.id("user-name");
     By password = By.id("password");
     By loginBtn = By.id("login-button");
+    By errorMsg = By.cssSelector("h3[data-test='error']");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -22,6 +23,11 @@ public class LoginPage {
     public void login(String user, String pass) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(username)).sendKeys(user);
         driver.findElement(password).sendKeys(pass);
-        wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();
+        driver.findElement(loginBtn).click();
+    }
+
+    // ✅ Strong negative validation
+    public String getErrorMessage() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsg)).getText();
     }
 }
