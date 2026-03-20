@@ -30,6 +30,7 @@ The goal of this project is to demonstrate **clean automation practices**, inclu
 
 ## Project Structure
 ecommerce-automation-framework
+
 │
 ├── src/test/java
 │ ├── base → WebDriver setup
@@ -41,10 +42,6 @@ ecommerce-automation-framework
 ├── testng.xml
 ├── pom.xml
 └── README.md
-
-<img width="470" height="397" alt="image" src="https://github.com/user-attachments/assets/8c1579fe-0545-49ef-afcf-852abee83b39" />
-
-
 
 ---
 
