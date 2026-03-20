@@ -4,18 +4,18 @@
 This is a **junior-level Selenium automation framework** built using Java and TestNG.  
 It automates an end-to-end e-commerce flow including login, product filtering, adding items to cart, and validation.
 
-The goal of this project is to demonstrate **clean automation practices**, including Page Object Model, data-driven testing, and handling test failures with screenshots.
+The project demonstrates **clean automation practices**, including Page Object Model (POM), data-driven testing, explicit waits, and screenshot capture on failure.
 
 ---
 
 ## Features
-- End-to-end test automation (Login → Filter → Add to Cart → Validate)
+- End-to-end test automation (Login → Filter → Add to Cart → Validate Cart)
 - Page Object Model (POM) design pattern
 - Data-driven testing using TestNG DataProvider
-- Explicit waits for stable test execution
-- Screenshot capture on test failure
+- Explicit waits for stable execution
+- Screenshot capture on test failure (TestNG Listener)
 - Positive and negative test scenarios
-- Clean and maintainable project structure
+- Reusable and maintainable framework structure
 
 ---
 
@@ -44,49 +44,58 @@ ecommerce-automation-framework
 └── README.md
 ```
 
+
 ---
 
 ## Test Scenarios
 
 ### Positive Scenario
 - Login with valid credentials
-- Apply product filter
+- Apply product filter (Price: Low to High)
 - Add product to cart
-- Verify product is displayed in cart
+- Navigate to cart
+- Verify product name is displayed
 
 ### Negative Scenario
 - Login with invalid credentials
-- Validate that login fails and user stays on login page
+- Validate error message is displayed
+
+---
+
+## Test Website
+https://www.saucedemo.com/
 
 ---
 
 ## Screenshots on Failure
-Screenshots are automatically captured when a test fails and stored in the `/screenshots` folder for debugging.
+Screenshots are automatically captured when a test fails and stored in the `/screenshots` folder.
+
+### Example:
+<img width="1920" height="847" alt="forceFailureForScreenshot_20260320_140053" src="https://github.com/user-attachments/assets/8b199bfc-53fa-4bb1-b129-7fba7998b090" />
+
 
 ---
 
 ## How to Run the Project
-
 1. Clone the repository: git clone https://github.com/SapteshPawar/ecommerce-automation-framework.git
 2. Open in Eclipse as a Maven Project
 3. Run tests: Right Click → testng.xml → Run As → TestNG Suite
 
-
 ---
 
 ## What I Learned
-- Building a Selenium automation framework from scratch
-- Implementing Page Object Model (POM)
-- Writing stable tests using explicit waits
-- Using TestNG DataProvider for multiple test scenarios
-- Capturing screenshots automatically on failure
+- Building Selenium framework using Page Object Model
+- Implementing data-driven testing using TestNG
+- Handling dynamic elements using explicit waits
+- Capturing screenshots using TestNG listeners
+- Writing clean and maintainable automation code
 - Using Git and GitHub for version control
 
 ---
 
 ## Why This Project
-This project focuses on **automation fundamentals** rather than complex frameworks.  
-It is designed to demonstrate **clean, readable, and maintainable test automation code** suitable for junior QA roles.
+This project focuses on **automation fundamentals and real-world test scenarios** rather than complex frameworks.  
+It demonstrates the ability to build **stable, readable, and maintainable automation tests**, which is essential for junior QA roles.
 
 ---
 
