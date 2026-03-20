@@ -29,19 +29,20 @@ The goal of this project is to demonstrate **clean automation practices**, inclu
 ---
 
 ## Project Structure
+```
 ecommerce-automation-framework
-
 │
 ├── src/test/java
-│ ├── base → WebDriver setup
-│ ├── pages → Page Object classes
-│ ├── tests → Test classes
-│ ├── utils → Utilities (DataProvider, Screenshot)
-│ └── listeners → TestNG listeners
+│   ├── base        → WebDriver setup
+│   ├── pages       → Page Object classes
+│   ├── tests       → Test classes
+│   ├── utils       → Utilities (DataProvider, Screenshot)
+│   └── listeners   → TestNG listeners
 │
 ├── testng.xml
 ├── pom.xml
 └── README.md
+```
 
 ---
 
